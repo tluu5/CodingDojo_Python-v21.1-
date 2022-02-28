@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="continer">
+        <a class="btn btn-primary mt-2 float-end" href="/dashboard">Dashboard</a>
+        <h1>Showing Doggo Info for Dog No. {{ dog.id }}!</h1>
+        <h1>Name: {{ dog.name }}</h1>
+        <h1>Breed: {{ dog.breed }}</h1>
+        <h1>Age: {{ dog.age }}</h1>
+        <h1>Owner: {{ dog.owner.first_name }} {{ dog.owner.last_name }}</h1>
+    </div>
+</body>
+</html>
