@@ -23,7 +23,7 @@ def create_dog():
     Dog.create_dog(data)
     return redirect("/dashboard")
 
-@app.route("/dog/<int:dog_id>")
+@app.route("/dog/<int:dog_id>/show")
 def show_dog(dog_id):
     if "owner_id" not in session:
         flash ("Please login or register before entering the site!")

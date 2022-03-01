@@ -24,7 +24,7 @@
             <tbody>
                 {% for dog in all_dogs %}
                 <tr>
-                    <th scope="row"><a href="/dog/{{dog.id}}">{{ dog.name }}</a></th>
+                    <th scope="row"><a href="/dog/{{dog.id}}/show">{{ dog.name }}</a></th>
                     <td>{{ dog.breed }}</td>
                     <td>{{ dog.age }}</td>
                     <td>{{ dog.owner.first_name }}</td>
