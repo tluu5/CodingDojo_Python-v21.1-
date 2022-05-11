@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <a class= "btn btn-danger float-end mt-2" href="/logout">Logout</a>
+        <h1>Welcome to Car Dealz, <span class="text-primary">{{ owner.first_name }}</span>!!!</h1>
+        <h2>Cars for Sale</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Model</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Seller</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for car in all_cars %}
+                <tr>
+                    <th scope="row">{{ car.model }}</th>
+                    <td>{{ car.year }}</td>
+                    <td>{{ owner.first_name }} {{ owner.last_name }}</td>
+                    <td>
+                        <a href="/car/{{car.id}}/show">View</a> |
+                        <a href="/car/{{car.id}}/edit">Edit</a> |
+                        <a href="/car/{{car.id}}/delete">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a class="btn btn-warning mt-2" href="/new_car">Add A Car</a>
+    </div>
+</body>
+</html>

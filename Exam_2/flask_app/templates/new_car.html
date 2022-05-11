@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add A Car</title>
+</head>
+<body>
+    <div class="container">
+        <a class="btn btn-primary mt-2 float-end" href="/dashboard">Dashboard</a>
+        <a class= "btn btn-danger float-end mt-2" href="/logout">Logout</a>
+        <h1>Put Car Up For Sale</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="/create_car" method="post">
+            <input type="hidden" value="{{ owner_id }}" name="owner_id">
+            <div class="mb-3">
+                <label for="price" class="form-label">Price:</label>
+                <input type="number" class="form-control" id="price" name="price">
+            </div>
+            <div class="mb-3">
+                <label for="model" class="form-label">Model:</label>
+                <input type="text" class="form-control" id="model" name="model">
+            </div>
+            <div class="mb-3">
+                <label for="make" class="form-label">Make:</label>
+                <input type="date" class="form-control" id="make" name="make">
+            </div>
+            <div class="mb-3">
+                <label for="year" class="form-label">Year:</label>
+                <input type="number" class="form-control" id="year" name="year">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description:</label>
+                <input type="text" class="form-control" id="description" name="description">
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+</body>
+</html>

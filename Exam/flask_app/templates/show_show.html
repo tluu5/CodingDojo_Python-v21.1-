@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+</head>
+<body>
+    <div class="container">
+        <a class="btn btn-primary mt-2 float-end" href="/dashboard">TV Shows</a>
+        <a class= "btn btn-danger float-end mt-2" href="/logout">Logout</a>
+        <h1>{{ show.title }}</h1>
+        <h1>Network: {{ show.network }}</h1>
+        <h1>Release Date: {{ show.release_date }}</h1>
+        <h1>Description: {{ show.description }}</h1>
+        <h1>Posted By: {{ show.owner.first_name }} {{ show.owner.last_name }}</h1>
+    </div>
+</body>
+</html>

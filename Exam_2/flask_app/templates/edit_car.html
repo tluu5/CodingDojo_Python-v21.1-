@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <div class="container">
+        <a class="btn btn-primary mt-2 float-end" href="/dashboard">Dashboard</a>
+        <a class= "btn btn-danger float-end mt-2" href="/logout">Logout</a>
+        <h1>Edit {{ car.model }}</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <p class="text-danger">{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form action="/car/{{car.id}}/update" method="post">
+            <div class="mb-3">
+                <label for="price" class="form-label">Price:</label>
+                <input type="number" class="form-control" id="price" name="price" value="{{ car.price }}">
+            </div>
+            <div class="mb-3">
+                <label for="model" class="form-label">Model:</label>
+                <input type="text" class="form-control" id="model" name="model" value="{{ car.model }}">
+            </div>
+            <div class="mb-3">
+                <label for="make" class="form-label">Make:</label>
+                <input type="text" class="form-control" id="make" name="make" value="{{ car.make }}">
+            </div>
+            <div class="mb-3">
+                <label for="year" class="form-label">Year:</label>
+                <input type="number" class="form-control" id="year" name="year" value="{{ car.year }}">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description:</label>
+                <input type="text" class="form-control" id="description" name="description" value="{{ car.description }}">
+            </div>
+            <button type="submit" class="btn btn-dark">Update</button>
+        </form>
+    </div>
+</body>
+</html>
